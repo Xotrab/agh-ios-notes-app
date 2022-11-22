@@ -12,7 +12,10 @@ struct TopicsListView: View {
     var body: some View {
         List {
             ForEach(topics) { topic in
-                TopicView(topic: topic)
+                NavigationLink(destination: NotesListView(notes: topic.notes)) {
+                    TopicView(topic: topic)
+                }
+                
             }
         }
         .navigationTitle("Topics")
