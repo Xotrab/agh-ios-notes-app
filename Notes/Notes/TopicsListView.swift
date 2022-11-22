@@ -8,13 +8,30 @@
 import SwiftUI
 
 struct TopicsListView: View {
+    var topics: [Topic]
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ForEach(topics) { topic in
+                TopicView(topic: topic)
+            }
+        }
+        .navigationTitle("Topics")
+        .toolbar {
+            Button(action: {
+                
+            }) {
+                Image(systemName: "plus")
+            }
+            .accessibilityLabel("New Scrum")
+        }
     }
 }
 
 struct TopicsListView_Previews: PreviewProvider {
+    static var topics: [Topic] = Topic.sampleData
     static var previews: some View {
-        TopicsListView()
+        NavigationView {
+            TopicsListView(topics: topics)
+        }
     }
 }

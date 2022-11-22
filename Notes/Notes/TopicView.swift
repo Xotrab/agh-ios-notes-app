@@ -8,13 +8,23 @@
 import SwiftUI
 
 struct TopicView: View {
+    let topic: Topic
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack() {
+            Text(topic.name)
+            Spacer()
+            Label("", systemImage: "trash")
+        }.padding()
+        //.overlay(
+          //  RoundedRectangle(cornerRadius: 16)
+            //    .stroke(.gray, lineWidth: 4)
+        //)
     }
 }
 
 struct TopicView_Previews: PreviewProvider {
+    static var mockTopic = Topic.sampleData[0]
     static var previews: some View {
-        TopicView()
+        TopicView(topic: mockTopic)
     }
 }

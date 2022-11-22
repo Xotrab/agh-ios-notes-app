@@ -17,3 +17,11 @@ struct Topic: Identifiable {
         self.name = name
     }
 }
+
+extension Topic {
+    static let sampleData: [Topic] =
+    [
+        Topic(name: "XD", notes: Note.sampleData),
+        Topic(name: "lolek", notes: Note.sampleData)
+    ]
+}
