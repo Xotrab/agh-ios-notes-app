@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3DBA72E72933A7D2009FD720 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBA72E62933A7D2009FD720 /* NoteView.swift */; };
+		3DBA72E92933A842009FD720 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBA72E82933A842009FD720 /* DatabaseService.swift */; };
+		3DBA72ED2933AB94009FD720 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 3DBA72EC2933AB94009FD720 /* SQLite */; };
+		3DBA72F02933B2AE009FD720 /* NotesTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBA72EF2933B2AE009FD720 /* NotesTable.swift */; };
+		3DBA72F22933B2B7009FD720 /* TopicsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBA72F12933B2B7009FD720 /* TopicsTable.swift */; };
 		AC71C18A29239066004423FC /* NotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC71C18929239066004423FC /* NotesApp.swift */; };
-		AC71C18C29239066004423FC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC71C18B29239066004423FC /* ContentView.swift */; };
 		AC71C18E29239067004423FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC71C18D29239067004423FC /* Assets.xcassets */; };
 		AC71C19129239067004423FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC71C19029239067004423FC /* Preview Assets.xcassets */; };
 		AC71C19A292390D5004423FC /* TopicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC71C199292390D5004423FC /* TopicView.swift */; };
@@ -20,9 +24,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3DBA72E62933A7D2009FD720 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
+		3DBA72E82933A842009FD720 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		3DBA72EF2933B2AE009FD720 /* NotesTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTable.swift; sourceTree = "<group>"; };
+		3DBA72F12933B2B7009FD720 /* TopicsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsTable.swift; sourceTree = "<group>"; };
 		AC71C18629239066004423FC /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC71C18929239066004423FC /* NotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesApp.swift; sourceTree = "<group>"; };
-		AC71C18B29239066004423FC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AC71C18D29239067004423FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC71C19029239067004423FC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AC71C199292390D5004423FC /* TopicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicView.swift; sourceTree = "<group>"; };
@@ -38,12 +45,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DBA72ED2933AB94009FD720 /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3DBA72EA2933A84B009FD720 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3DBA72E82933A842009FD720 /* DatabaseService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		3DBA72EE2933B298009FD720 /* Tables */ = {
+			isa = PBXGroup;
+			children = (
+				3DBA72EF2933B2AE009FD720 /* NotesTable.swift */,
+				3DBA72F12933B2B7009FD720 /* TopicsTable.swift */,
+			);
+			path = Tables;
+			sourceTree = "<group>";
+		};
 		AC71C17D29239066004423FC = {
 			isa = PBXGroup;
 			children = (
@@ -63,12 +88,14 @@
 		AC71C18829239066004423FC /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				3DBA72EE2933B298009FD720 /* Tables */,
+				3DBA72EA2933A84B009FD720 /* Services */,
 				AC71C19F29239A5D004423FC /* Models */,
-				AC71C1A429239D40004423FC /* NotesListView.swift */,
 				AC71C18929239066004423FC /* NotesApp.swift */,
-				AC71C18B29239066004423FC /* ContentView.swift */,
-				AC71C199292390D5004423FC /* TopicView.swift */,
 				AC71C19B29239112004423FC /* TopicsListView.swift */,
+				AC71C199292390D5004423FC /* TopicView.swift */,
+				AC71C1A429239D40004423FC /* NotesListView.swift */,
+				3DBA72E62933A7D2009FD720 /* NoteView.swift */,
 				AC71C19D2923913C004423FC /* AddNoteView.swift */,
 				AC71C18D29239067004423FC /* Assets.xcassets */,
 				AC71C18F29239067004423FC /* Preview Content */,
@@ -109,6 +136,9 @@
 			dependencies = (
 			);
 			name = Notes;
+			packageProductDependencies = (
+				3DBA72EC2933AB94009FD720 /* SQLite */,
+			);
 			productName = Notes;
 			productReference = AC71C18629239066004423FC /* Notes.app */;
 			productType = "com.apple.product-type.application";
@@ -137,6 +167,9 @@
 				Base,
 			);
 			mainGroup = AC71C17D29239066004423FC;
+			packageReferences = (
+				3DBA72EB2933AB94009FD720 /* XCRemoteSwiftPackageReference "SQLite" */,
+			);
 			productRefGroup = AC71C18729239066004423FC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -163,14 +196,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DBA72E92933A842009FD720 /* DatabaseService.swift in Sources */,
+				3DBA72F22933B2B7009FD720 /* TopicsTable.swift in Sources */,
 				AC71C19C29239112004423FC /* TopicsListView.swift in Sources */,
 				AC71C1A129239A85004423FC /* Topic.swift in Sources */,
 				AC71C1A329239A98004423FC /* Note.swift in Sources */,
 				AC71C19A292390D5004423FC /* TopicView.swift in Sources */,
-				AC71C18C29239066004423FC /* ContentView.swift in Sources */,
 				AC71C18A29239066004423FC /* NotesApp.swift in Sources */,
 				AC71C1A529239D40004423FC /* NotesListView.swift in Sources */,
 				AC71C19E2923913C004423FC /* AddNoteView.swift in Sources */,
+				3DBA72F02933B2AE009FD720 /* NotesTable.swift in Sources */,
+				3DBA72E72933A7D2009FD720 /* NoteView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +405,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3DBA72EB2933AB94009FD720 /* XCRemoteSwiftPackageReference "SQLite" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3DBA72EC2933AB94009FD720 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DBA72EB2933AB94009FD720 /* XCRemoteSwiftPackageReference "SQLite" */;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AC71C17E29239066004423FC /* Project object */;
 }

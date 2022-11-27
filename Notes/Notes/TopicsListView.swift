@@ -25,7 +25,6 @@ struct TopicsListView: View {
             }) {
                 Image(systemName: "plus")
             }
-            .accessibilityLabel("New Scrum")
         }
     }
 }

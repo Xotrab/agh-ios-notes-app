@@ -8,10 +8,10 @@
 import Foundation
 
 struct Topic: Identifiable {
-    let id: UUID
+    let id: Int64
     var notes: [Note]
     var name: String
-    init(id: UUID = UUID(), name: String, notes: [Note]) {
+    init(id: Int64, name: String, notes: [Note]) {
         self.id = id
         self.notes = notes
         self.name = name
@@ -21,7 +21,7 @@ struct Topic: Identifiable {
 extension Topic {
     static let sampleData: [Topic] =
     [
-        Topic(name: "XD", notes: Note.sampleData),
-        Topic(name: "lolek", notes: Note.sampleData)
+        Topic(id: 21, name: "XD", notes: Note.sampleData),
+        Topic(id: 37, name: "lolek", notes: Note.sampleData)
     ]
 }
