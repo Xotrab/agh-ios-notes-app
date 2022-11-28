@@ -13,17 +13,7 @@ struct TopicView: View {
         HStack() {
             Text(topic.name)
             Spacer()
-            //Button(action: {
-                
-            //}) {
-              //  Image(systemName: "trash")
-            //}
-            
         }
-        //.overlay(
-          //  RoundedRectangle(cornerRadius: 16)
-            //    .stroke(.gray, lineWidth: 4)
-        //)
     }
 }
 

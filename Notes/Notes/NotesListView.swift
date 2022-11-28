@@ -15,7 +15,7 @@ struct NotesListView: View {
     let topicId: Int64
     
     var body: some View {
-        VStack {
+        List {
             ForEach(self.notes) { note in
                 NoteView(note: note)
             }

@@ -8,7 +8,10 @@ struct NoteView: View {
     }
     
     var body: some View {
-        Text(self.note.content)
+        HStack {
+            Text(self.note.content)
+            Spacer()
+        }
     }
 }
 
