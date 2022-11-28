@@ -12,6 +12,7 @@
 		3DBA72ED2933AB94009FD720 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 3DBA72EC2933AB94009FD720 /* SQLite */; };
 		3DBA72F02933B2AE009FD720 /* NotesTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBA72EF2933B2AE009FD720 /* NotesTable.swift */; };
 		3DBA72F22933B2B7009FD720 /* TopicsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBA72F12933B2B7009FD720 /* TopicsTable.swift */; };
+		3DBA72F62933CEBC009FD720 /* AddTopicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBA72F52933CEBC009FD720 /* AddTopicView.swift */; };
 		AC71C18A29239066004423FC /* NotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC71C18929239066004423FC /* NotesApp.swift */; };
 		AC71C18E29239067004423FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC71C18D29239067004423FC /* Assets.xcassets */; };
 		AC71C19129239067004423FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC71C19029239067004423FC /* Preview Assets.xcassets */; };
@@ -28,6 +29,7 @@
 		3DBA72E82933A842009FD720 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		3DBA72EF2933B2AE009FD720 /* NotesTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTable.swift; sourceTree = "<group>"; };
 		3DBA72F12933B2B7009FD720 /* TopicsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsTable.swift; sourceTree = "<group>"; };
+		3DBA72F52933CEBC009FD720 /* AddTopicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTopicView.swift; sourceTree = "<group>"; };
 		AC71C18629239066004423FC /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC71C18929239066004423FC /* NotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesApp.swift; sourceTree = "<group>"; };
 		AC71C18D29239067004423FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				AC71C18929239066004423FC /* NotesApp.swift */,
 				AC71C19B29239112004423FC /* TopicsListView.swift */,
 				AC71C199292390D5004423FC /* TopicView.swift */,
+				3DBA72F52933CEBC009FD720 /* AddTopicView.swift */,
 				AC71C1A429239D40004423FC /* NotesListView.swift */,
 				3DBA72E62933A7D2009FD720 /* NoteView.swift */,
 				AC71C19D2923913C004423FC /* AddNoteView.swift */,
@@ -196,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DBA72F62933CEBC009FD720 /* AddTopicView.swift in Sources */,
 				3DBA72E92933A842009FD720 /* DatabaseService.swift in Sources */,
 				3DBA72F22933B2B7009FD720 /* TopicsTable.swift in Sources */,
 				AC71C19C29239112004423FC /* TopicsListView.swift in Sources */,

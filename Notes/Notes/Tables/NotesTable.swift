@@ -3,7 +3,7 @@ import SQLite
 
 class NotesTable {
     let id = Expression<Int64>("id")
-    let topicId = Expression<Int64>("topicId")
+    let topicId = Expression<Int64?>("topicId")
     let content = Expression<String>("content")
     
     let table = Table("notes")
@@ -23,8 +23,8 @@ class NotesTable {
     
     func select(db: Connection, topicId: Int64) throws -> [Note] {
         var notes: [Note] = []
-        for note in try db.prepare(table.where(self.topicId == topicId)) {
-            notes.append(Note(id: note[self.id], content: note[self.content], topicId: note[self.topicId]))
+        for note in try db.prepare(table.filter(self.topicId == topicId)) {
+            notes.append(Note(id: note[self.id], content: note[self.content], topicId: note[self.topicId]!))
         }
         
         return notes

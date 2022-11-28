@@ -32,6 +32,7 @@ class DatabaseService {
     }
     
     func addNote(content: String, topicId: Int64) throws -> Note {
+        
         return try self.notes.insert(db: self.db, content: content, topicId: topicId)
     }
 

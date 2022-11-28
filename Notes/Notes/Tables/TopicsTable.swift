@@ -5,7 +5,7 @@ class TopicsTable {
     let id = Expression<Int64>("id")
     let name = Expression<String>("content")
     
-    let table = Table("notes")
+    let table = Table("topics")
     
     init(db: Connection) throws {
         try db.run(table.create(ifNotExists:true) {t in

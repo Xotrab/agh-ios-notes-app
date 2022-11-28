@@ -1,20 +1,19 @@
-//
-//  NoteView.swift
-//  Notes
-//
-//  Created by user229941 on 11/27/22.
-//
 
 import SwiftUI
 
 struct NoteView: View {
+    let note: Note
+    init(note: Note) {
+        self.note = note
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(self.note.content)
     }
 }
 
 struct NoteView_Previews: PreviewProvider {
     static var previews: some View {
-        NoteView()
+        NoteView(note: Note.sampleData[0])
     }
 }

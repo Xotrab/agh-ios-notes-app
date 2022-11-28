@@ -8,22 +8,65 @@
 import SwiftUI
 
 struct TopicsListView: View {
-    var topics: [Topic]
+    @State var newTopicName: String = ""
+    @State var isPresentingNewTopicView: Bool = false
+    let database: DatabaseService?
+    @State var topics: [Topic]
+    
+    init(database: DatabaseService) {
+        self.database = database
+        do  {
+            self.topics = try self.database!.getTopics()
+        }
+        catch {
+            self.topics = Topic.sampleData
+        }
+    }
+    
+    init(topics: [Topic]) {
+        self.topics = topics
+        self.database = nil
+    }
+    
     var body: some View {
         List {
             ForEach(topics) { topic in
-                NavigationLink(destination: NotesListView(notes: topic.notes)) {
+                NavigationLink(destination: NotesListView(database: self.database, topicId: topic.id)) {
                     TopicView(topic: topic)
                 }
-                
             }
         }
         .navigationTitle("Topics")
         .toolbar {
             Button(action: {
-                
+                isPresentingNewTopicView = true
             }) {
                 Image(systemName: "plus")
+            }
+        }
+        .sheet(isPresented: $isPresentingNewTopicView) {
+            NavigationView {
+                AddTopicView(name: $newTopicName)
+                    .toolbar {
+                        ToolbarItem(placement: .cancellationAction) {
+                            Button("Dismiss") {
+                                isPresentingNewTopicView = false
+                                newTopicName = ""
+                            }
+                        }
+                        ToolbarItem(placement: .confirmationAction) {
+                            Button("Add") {
+                                do {
+                                    let topic = try self.database?.addTopic(name: self.newTopicName)
+                                    self.topics.append(topic!)
+                                } catch {
+                                    print(error)
+                                }
+                                isPresentingNewTopicView = false
+                                newTopicName = ""
+                            }
+                        }
+                    }
             }
         }
     }
