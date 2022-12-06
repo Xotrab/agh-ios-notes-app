@@ -1,5 +1,6 @@
 
 import SwiftUI
+import Atributika
 
 struct NoteView: View {
     let note: Note
@@ -7,9 +8,19 @@ struct NoteView: View {
         self.note = note
     }
     
+    func applyStyling(note: String) throws -> AttributedString {
+        let str = note
+            .styleHashtags(Style.font(.boldSystemFont(ofSize: 25)))
+            .styleLinks(Style.foregroundColor(.blue))
+            .styleMentions(Style.foregroundColor(.darkGray))
+            .attributedString
+        
+        return try AttributedString(str, including: \.uiKit)
+    }
+    
     var body: some View {
         HStack {
-            Text(self.note.content)
+            Text(try! self.applyStyling(note: self.note.content))
             Spacer()
         }
     }
