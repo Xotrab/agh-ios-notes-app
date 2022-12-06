@@ -27,4 +27,8 @@ class TopicsTable {
         
         return topics
     }
+    
+    func delete(db: Connection, id: Int64) throws {
+        try db.run(table.where(self.id == id).delete())
+    }
 }

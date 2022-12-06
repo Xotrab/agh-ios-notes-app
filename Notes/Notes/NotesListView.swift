@@ -14,11 +14,22 @@ struct NotesListView: View {
     let database: DatabaseService?
     let topicId: Int64
     
+    func delete(at offsets: IndexSet) {
+        let index = offsets.first
+        do {
+            try self.database?.deleteNote(id: self.notes[index!].id)
+            self.notes.remove(atOffsets: offsets)
+        }
+        catch {
+            print(error)
+        }
+    }
+    
     var body: some View {
         List {
             ForEach(self.notes) { note in
                 NoteView(note: note)
-            }
+            }.onDelete(perform: delete)
         }
         .onAppear {
             do {
@@ -35,7 +46,7 @@ struct NotesListView: View {
                 isPresentingNewNoteView = true
             }) {
                 Image(systemName: "plus")
-            }
+            }.disabled(self.notes.count >= 25)
         }
         .sheet(isPresented: $isPresentingNewNoteView) {
             NavigationView {

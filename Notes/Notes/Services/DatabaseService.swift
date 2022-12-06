@@ -40,4 +40,11 @@ class DatabaseService {
         return try self.topics.insert(db: self.db, name: name)
     }
     
+    func deleteTopic(id: Int64)  throws {
+        return try self.topics.delete(db: self.db, id: id)
+    }
+    
+    func deleteNote(id: Int64) throws {
+        return try self.notes.delete(db: self.db, id: id)
+    }
 }

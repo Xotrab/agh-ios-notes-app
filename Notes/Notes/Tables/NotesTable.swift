@@ -29,4 +29,8 @@ class NotesTable {
         
         return notes
     }
+    
+    func delete(db: Connection, id: Int64) throws {
+        try db.run(table.where(self.id == id).delete())
+    }
 }

@@ -13,6 +13,17 @@ struct TopicsListView: View {
     let database: DatabaseService?
     @State var topics: [Topic]
     
+    func delete(at offsets: IndexSet) {
+        let index = offsets.first
+        do {
+            try self.database?.deleteTopic(id: self.topics[index!].id)
+            self.topics.remove(atOffsets: offsets)
+        }
+        catch {
+            print(error)
+        }
+    }
+    
     init(database: DatabaseService) {
         self.database = database
         do  {
@@ -34,7 +45,7 @@ struct TopicsListView: View {
                 NavigationLink(destination: NotesListView(database: self.database, topicId: topic.id)) {
                     TopicView(topic: topic)
                 }
-            }
+            }.onDelete(perform: delete)
         }
         .navigationTitle("Topics")
         .toolbar {
@@ -42,7 +53,7 @@ struct TopicsListView: View {
                 isPresentingNewTopicView = true
             }) {
                 Image(systemName: "plus")
-            }
+            }.disabled(self.topics.count >= 25)
         }
         .sheet(isPresented: $isPresentingNewTopicView) {
             NavigationView {

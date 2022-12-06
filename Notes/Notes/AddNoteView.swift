@@ -7,6 +7,7 @@ struct AddNoteView: View {
     
     @State private var selectedItem: PhotosPickerItem? = nil
     @State private var selectedImageData: Data? = nil
+    @State private var displayImage: Bool = false
     
     func detectText() {
         let requestHandler = VNImageRequestHandler(data: selectedImageData!)
@@ -30,9 +31,10 @@ struct AddNoteView: View {
         let recognizedStrings = observations.compactMap { observation in
             return observation.topCandidates(1).first?.string
         }
-        
-        let joinedNote = recognizedStrings.joined()
+        dump(recognizedStrings)
+        let joinedNote = recognizedStrings.joined(separator: "\n")
         content = joinedNote
+        displayImage = false
     }
     
     var body: some View {
@@ -48,26 +50,28 @@ struct AddNoteView: View {
                     Task {
                         if let data = try? await newItem?.loadTransferable(type: Data.self) {
                             selectedImageData = data
+                            displayImage = true
                         }
                     }
                 }
-            
-            if let selectedImageData,
-               let uiImage = UIImage(data: selectedImageData) {
-                Section {
-                    Image(uiImage: uiImage)
-                        .resizable()
-                        .scaledToFit()
-                    
-                    Button("Detect text") {
-                        detectText()
+            if displayImage {
+                if let selectedImageData,
+                   let uiImage = UIImage(data: selectedImageData) {
+                    Section {
+                        Image(uiImage: uiImage)
+                            .resizable()
+                            .scaledToFit()
+                        
+                        Button("Detect text") {
+                            detectText()
+                        }
                     }
+                    .frame(maxWidth: .infinity, alignment: .center)
                 }
-                .frame(maxWidth: .infinity, alignment: .center)
             }
 
             Section {
-                TextField("Note here", text: $content)
+                TextEditor(text: $content)
             }
         }
     }
