@@ -13,6 +13,7 @@
 		3DBA72F02933B2AE009FD720 /* NotesTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBA72EF2933B2AE009FD720 /* NotesTable.swift */; };
 		3DBA72F22933B2B7009FD720 /* TopicsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBA72F12933B2B7009FD720 /* TopicsTable.swift */; };
 		3DBA72F62933CEBC009FD720 /* AddTopicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBA72F52933CEBC009FD720 /* AddTopicView.swift */; };
+		3DE5F7CC293FA02200E24A40 /* Atributika in Frameworks */ = {isa = PBXBuildFile; productRef = 3DE5F7CB293FA02200E24A40 /* Atributika */; };
 		AC71C18A29239066004423FC /* NotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC71C18929239066004423FC /* NotesApp.swift */; };
 		AC71C18E29239067004423FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC71C18D29239067004423FC /* Assets.xcassets */; };
 		AC71C19129239067004423FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC71C19029239067004423FC /* Preview Assets.xcassets */; };
@@ -47,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DE5F7CC293FA02200E24A40 /* Atributika in Frameworks */,
 				3DBA72ED2933AB94009FD720 /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,6 +143,7 @@
 			name = Notes;
 			packageProductDependencies = (
 				3DBA72EC2933AB94009FD720 /* SQLite */,
+				3DE5F7CB293FA02200E24A40 /* Atributika */,
 			);
 			productName = Notes;
 			productReference = AC71C18629239066004423FC /* Notes.app */;
@@ -172,6 +175,7 @@
 			mainGroup = AC71C17D29239066004423FC;
 			packageReferences = (
 				3DBA72EB2933AB94009FD720 /* XCRemoteSwiftPackageReference "SQLite" */,
+				3DE5F7CA293FA02200E24A40 /* XCRemoteSwiftPackageReference "Atributika" */,
 			);
 			productRefGroup = AC71C18729239066004423FC /* Products */;
 			projectDirPath = "";
@@ -419,6 +423,14 @@
 				minimumVersion = 0.9.2;
 			};
 		};
+		3DE5F7CA293FA02200E24A40 /* XCRemoteSwiftPackageReference "Atributika" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/psharanda/Atributika";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -426,6 +438,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3DBA72EB2933AB94009FD720 /* XCRemoteSwiftPackageReference "SQLite" */;
 			productName = SQLite;
+		};
+		3DE5F7CB293FA02200E24A40 /* Atributika */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DE5F7CA293FA02200E24A40 /* XCRemoteSwiftPackageReference "Atributika" */;
+			productName = Atributika;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
