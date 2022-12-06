@@ -80,6 +80,6 @@ struct NotesListView: View {
 struct NotesListView_Previews: PreviewProvider {
     static var notes: [Note] = Note.sampleData
     static var previews: some View {
-        NotesListView(database: nil, topicId: 69)
+        NotesListView(database: nil, topicId: 1)
     }
 }

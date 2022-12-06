@@ -31,7 +31,7 @@ struct AddNoteView: View {
         let recognizedStrings = observations.compactMap { observation in
             return observation.topCandidates(1).first?.string
         }
-        dump(recognizedStrings)
+        
         let joinedNote = recognizedStrings.joined(separator: "\n")
         content = joinedNote
         displayImage = false

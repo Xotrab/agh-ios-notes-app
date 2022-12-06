@@ -22,10 +22,10 @@ struct Note: Identifiable {
 extension Note {
     static let sampleData: [Note] =
     [
-        Note(id: 2, content: "Japap nie wiedzial", topicId: 21),
-        Note(id: 1, content: "Kilip galgan niszczy studentom marzenia", topicId: 21),
-        Note(id: 3, content: "Gar pod A0 czeka", topicId: 21),
-        Note(id: 7, content: "Drip mi przyszedl", topicId: 21)
+        Note(id: 1, content: "note 1", topicId: 1),
+        Note(id: 2, content: "note 2", topicId: 1),
+        Note(id: 3, content: "note 3", topicId: 2),
+        Note(id: 4, content: "note 4", topicId: 2)
     ]
 }
 

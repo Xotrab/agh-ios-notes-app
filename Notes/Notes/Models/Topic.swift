@@ -21,7 +21,7 @@ struct Topic: Identifiable {
 extension Topic {
     static let sampleData: [Topic] =
     [
-        Topic(id: 21, name: "XD", notes: Note.sampleData),
-        Topic(id: 37, name: "lolek", notes: Note.sampleData)
+        Topic(id: 1, name: "sample topic", notes: Note.sampleData),
+        Topic(id: 2, name: "sample topic 2", notes: Note.sampleData)
     ]
 }
